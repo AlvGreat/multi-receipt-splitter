@@ -1,0 +1,15 @@
+NAMES: user1, user2
+DESCRIPTION: test splits
+--
+RECEIPT NAME: golf
+PAYER: user1
+PRICE: 100, 100
+many golf balls, 100
+--
+RECEIPT NAME: dinner
+PAYER: user2
+PRICE: 50, 70
+appetizer, 10
+main course 1, 15; 1
+main course 2, 15; 2
+food user1 ate 75% of, 10; 1, 2; 3, 1

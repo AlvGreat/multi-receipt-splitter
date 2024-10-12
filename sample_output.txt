@@ -1,0 +1,37 @@
+--- RECEIPT: golf ---
+Payer:           user1
+Subtotal:        100.0
+Total:           100.0
+Tax + Tip rate:  1.0
+
+user1: 50.0      ['many golf balls']
+                 [50.0]
+user2: 50.0      ['many golf balls']
+                 [50.0]
+Check total: 100.0
+
+Note: price list includes tax + tip multiplier
+---------------------
+--- RECEIPT: dinner ---
+Payer:           user2
+Subtotal:        50.0
+Total:           70.0
+Tax + Tip rate:  1.4
+
+user1: 38.5      ['appetizer', 'main course 1', 'food user1 ate 75% of']
+                 [7.0, 21.0, 10.5]
+user2: 31.5      ['appetizer', 'main course 2', 'food user1 ate 75% of']
+                 [7.0, 21.0, 3.5]
+Check total: 70.0
+
+Note: price list includes tax + tip multiplier
+-----------------------
+
+--- Final Balances ---
+user1 should receive 11.5
+user2 should pay 11.5
+
+--- Final Transactions ---
+user2 -> user1: 11.5
+
+*disclaimer*: rounding errors may result in numbers off by a cent or two

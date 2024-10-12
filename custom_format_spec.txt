@@ -1,0 +1,37 @@
+(NAMES: list[str])
+(DESCRIPTION: str - name for splits)
+--
+(RECEIPT NAME: str - name of receipt)
+(PAYER: str - name of user who paid)
+(PRICE: int[2] - before tax/tip, after tax/tip)
+(<LIST OF ITEMS>: see format desc below)
+--
+(RECEIPT NAME: str - name of receipt)
+(PAYER: str - name of user who paid)
+(PRICE: int[2] - before tax/tip, after tax/tip)
+(<LIST OF ITEMS>)
+--
+...
+
+
+###################################################
+
+(4 formats for ITEM)
+// Split unnamed item among everyone
+PRICE  
+
+// Split ITEM_NAME among everyone
+ITEM_NAME, PRICE  
+
+// Split ITEM_NAME among people listed evenly
+ITEM_NAME, PRICE; <person_index_1, person_idx_2, ...>
+
+// Split ITEM_NAME among people listed evenly by ratio (i.e. person_index_1 pays a ratio of ratio_1)
+ITEM_NAME, PRICE; <person_index_1, person_idx_2, ...>; <ratio_1, ratio_2, ...>
+
+###################################################
+Notes:
+- Indices are all 1-indexed
+- Prices of items typed in should be before tax/tip
+    - since this is usually how restaurants present them
+    
