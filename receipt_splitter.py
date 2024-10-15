@@ -128,12 +128,11 @@ def parse_receipt(lines: list[str], names: list[str]) -> ReceiptData:
 
             # Split among specified people
             people_list = [int(x) for x in people_list]
-            num_people = len(people_list)
             
             for person_idx in people_list:
                 # Note: convert 1-index to 0-index
                 cool_people_stuff[person_idx-1]['item_names'].append(item_name)
-                cool_people_stuff[person_idx-1]['prices'].append(price / num_people)
+                cool_people_stuff[person_idx-1]['prices'].append(price / len(people_list))
         elif len(split_arr) == 3:
             # Handles Format 4: Split ITEM_NAME among people listed evenly by ratio 
             # (i.e. person_index_1 pays a ratio of ratio_1)
@@ -146,7 +145,6 @@ def parse_receipt(lines: list[str], names: list[str]) -> ReceiptData:
                 raise Exception(f"Mismatched lengths of people and ratio list: '{line}'")
 
             # Split among specified people with specific ratios
-            num_people = len(people_list)
             ratio_sum = sum(ratios_list)
             for person, ratio in zip(people_list, ratios_list):
                 cool_people_stuff[person-1]['item_names'].append(item_name)
