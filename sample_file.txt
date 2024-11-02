@@ -3,7 +3,7 @@ DESCRIPTION: test splits
 --
 RECEIPT NAME: golf
 PAYER: user1
-PRICE: 100, 100
+PRICE: 100
 many golf balls, 100
 --
 RECEIPT NAME: dinner

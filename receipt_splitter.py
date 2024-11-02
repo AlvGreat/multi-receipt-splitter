@@ -202,10 +202,12 @@ def parse_names(line):
 def parse_receipt_prices(line):
     line = clean_line("PRICE:", line)
     prices = line.split(",")
-    if len(prices) != 2:
-        raise Exception(f"Receipt price line {line} does not contain two prices")
+    if len(prices) == 2:
+        return float(prices[0]), float(prices[1])
+    elif len(prices) == 1:
+        return float(prices[0]), float(prices[0])
     
-    return float(prices[0]), float(prices[1])
+    raise Exception(f"Receipt price line {line} does not contain one or two prices")    
 
 
 # Given a string containing "item, price", return item string and float price

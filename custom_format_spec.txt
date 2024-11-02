@@ -3,7 +3,7 @@
 --
 (RECEIPT NAME: str - name of receipt)
 (PAYER: str - name of user who paid)
-(PRICE: int[2] - before tax/tip, after tax/tip)
+(PRICE: int[2] - before tax/tip, after tax/tip OR int - price, no additional tax)
 (<LIST OF ITEMS>: see format desc below)
 --
 (RECEIPT NAME: str - name of receipt)
